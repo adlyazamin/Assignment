@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - Asam Laksa Penang</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Gaya konsisten TripAdvisor */
+        .status.red { color: #d93025; font-weight: bold; }
+        .sub-text { color: #666; font-weight: normal; margin-left: 5px; font-size: 0.9em; }
+        
+        .location-link-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 15px 0;
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px solid #eee;
+        }
+
+        .parking-section {
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .p-icon {
+            border: 1.5px solid #333;
+            border-radius: 4px;
+            padding: 0 5px;
+            font-weight: bold;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+
+        .hours-table {
+            width: 100%;
+            font-size: 14px;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+
+        .hours-table td { padding: 5px 0; }
+        .hours-table td:last-child { text-align: right; }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <ul>
+            <a class="logo" href="index.html"><b>Explore Malaysia Travel Blog</b></a>
+            <li><a href="account.html">Account</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </div>
+
+    <div class="details-main-container">
+        <header class="item-header">
+            <h1>Penang Air Itam Laksa</h1>
+            <nav class="item-tabs">
+                <a href="#overview" class="active">Overview</a>
+                <a href="#about">About</a>
+                <a href="#location">Location</a>
+                <a href="#reviews">Reviews</a>
+            </nav>
+        </header>
+
+        <div class="hero-gallery">
+            <img src="laksa.png" alt="Asam Laksa Penang" style="width: 100%; border-radius: 12px; max-height: 450px; object-fit: cover;">
+        </div>
+
+        <div class="content-layout">
+            <div class="left-column">
+                <section id="overview">
+                    <h2>At a glance</h2>
+                    <p class="status red">Closed now <span class="sub-text">· Opens at 10:30 AM</span></p>
+                    <p class="address">📍 Jalan Pasar, Ayer Itam, 11500 George Town, Pulau Pinang</p>
+                    <div class="action-links" style="margin-top: 10px;">
+                        <a href="https://www.facebook.com/asamlaksaairitam/" target="_blank">🌐 Website</a> | 
+                        <a href="tel:+60125007063">📞 +60 12-500 7063</a> |
+                        <a href="mailto:info@airitamlaksa.com">✉️ Email</a>
+                    </div>
+                </section>
+
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+                <section id="about">
+                    <h2>About</h2>
+                    <p style="color: #444; line-height: 1.6;">Famous for its thick, spicy, and tangy broth, this stall has been a Penang staple since 1955. Located right next to the Air Itam market.</p>
+                    <div style="margin-top: 15px;">
+                        <p>✓ Lunch, Brunch</p>
+                        <p>✓ Takeout available</p>
+                        <p>✓ Casual outdoor seating, Seating</p>
+                    </div>
+                </section>
+
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+                <section id="location">
+                    <h2>Location</h2>
+                    <div class="map-box" style="margin-top: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.133276634591!2d100.27581517585038!3d5.401306334571932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac2307567735b%3A0xc665191297e59676!2sPenang%20Air%20Itam%20Laksa!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Penang+Air+Itam+Laksa" target="_blank" class="location-link-container">
+                        <div style="display: flex; align-items: flex-start;">
+                            <span style="margin-right: 12px; font-size: 18px;">📍</span>
+                            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #333;">
+                                Jalan Pasar, Pekan Ayer Itam,<br>11500 Ayer Itam, Pulau Pinang
+                            </p>
+                        </div>
+                        <span style="font-size: 22px; color: #333; font-weight: bold;">›</span>
+                    </a>
+
+                    <div class="parking-section">
+                        <span class="p-icon">P</span>
+                        <span>Street Parking</span>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-sidebar">
+                <div class="side-card save-box" style="border: 1px solid #eee; padding: 20px; border-radius: 12px; margin-bottom: 20px; text-align: center;">
+                    <h3>Save this restaurant</h3>
+                    <button style="width: 100%; padding: 10px; border: 1.5px solid #333; background: #fff; border-radius: 25px; cursor: pointer; font-weight: bold;" onclick="alert('Saved!')">
+                        ♡ Save
+                    </button>
+                </div>
+
+                <div class="side-card hours-box" style="border: 1px solid #eee; padding: 20px; border-radius: 12px;">
+                    <h3>Hours</h3>
+                    <p class="status red">Closed now</p>
+                    <table class="hours-table">
+                        <tr><td>Sunday</td><td>10:30 AM - 7:00 PM</td></tr>
+                        <tr><td>Monday</td><td>10:30 AM - 7:00 PM</td></tr>
+                        <tr><td>Tuesday</td><td>10:30 AM - 7:00 PM</td></tr>
+                        <tr style="font-weight: bold; background: #f9f9f9;"><td>Wednesday</td><td>10:30 AM - 7:00 PM</td></tr>
+                        <tr><td>Thursday</td><td>10:30 AM - 7:00 PM</td></tr>
+                        <tr><td>Friday</td><td>10:30 AM - 7:00 PM</td></tr>
+                        <tr><td>Saturday</td><td>10:30 AM - 7:00 PM</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" style="text-align: center; padding: 40px 0; background: #f9f9f9; margin-top: 50px;">
+        <footer>
+            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
+            <p>© 2025 CSF3133 | Web-based Interface Design</p>
+        </footer>
+    </div>
+
+</body>
+</html>
