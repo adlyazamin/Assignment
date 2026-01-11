@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account - Explore Malaysia Travel Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+    <!--Navigation Bar-->
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
-            <li><a href="account.html" class="active">Account</a></li>
+            <li class="brand">Explore Malaysia Travel Blog</li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
-            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </li>
         </ul>
     </div>
 
@@ -26,12 +32,129 @@
         </header>
     </div>
 
+    <div class="profile-header">
+        <div class="profile-info">
+            <img src="images/profile.png" class="profile-avatar" alt="Profile">
+
+            <div class="profile-text">
+                <h2>Rory</h2>
+                <p class="contributions">Contributions<br><span>0</span></p>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <button class="edit-btn">Edit profile</button>
+            <button class="settings-btn">⚙️</button>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="profile-tabs">
+        <button class="tab active" data-tab="activity">Activity feed</button>
+        <button class="tab" data-tab="trips">Trips</button>
+        <button class="tab" data-tab="photos">Photos</button>
+        <button class="tab" data-tab="reviews">Reviews</button>
+        <button class="tab" data-tab="wishlist">Wishlist</button>
+    </div>
+
+    <!-- Profile Layout: LEFT + RIGHT -->
+    <div class="profile-layout">
+
+        <!-- LEFT COLUMN -->
+        <div class="profile-left">
+
+            <!-- Share Travel Advice -->
+            <div class="card travel-advice">
+                <h3>Share your travel advice</h3>
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-camera"></i> Post photos</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-pen"></i> Write review</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Experience -->
+            <div class="card">
+                <h3>Experience</h3>
+
+
+                <div class="achievement">
+                    <strong>＋Write your first review</strong>
+                </div>
+
+                <div class="achievement">
+                    <strong>＋Upload your first photo</strong>
+
+                </div>
+
+                <button class="view-btn">View all</button>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="card">
+                <h3>Personal Information</h3>
+                <p>＋ Add your current city</p>
+                <p>📅 Joined in Jan 2026</p>
+                <p>＋ Add a website</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="profile-right">
+            <div class="tab-content">
+                <div class="tab-panel active" id="activity">
+                    <div class="card center">
+                        <h3>Activity Feed</h3>
+                        <p class="muted">No activity yet. Start exploring Malaysia!</p>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="trips">
+                    <div class="card center">
+                        <h3>Your Trips</h3>
+                        <p class="muted">You haven’t added any trips.</p>
+                    </div>
+                </div>
+                <div class="tab-panel" id="photos">
+                    <div class="card center">
+                        <h3>Your Photos</h3>
+                        <p class="muted">Upload your travel photos.</p>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="reviews">
+                    <div class="card center">
+                        <h3>Your Reviews</h3>
+                        <p class="muted">Write your first review.</p>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="wishlist">
+                    <div class="card center">
+                        <h3>Wishlist</h3>
+                        <p class="muted">List of your wishlist.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
     <div class="footer">
         <footer>
             <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
+            <p>&copy; 2025 CSF3133 | Web-based Interface Design</p>
         </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

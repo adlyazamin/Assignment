@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore - Explore Malaysia Travel Blog</title>
+    <title>Explore - Malaysia Travel Blog</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
+            <a class="logo"><b>Explore Malaysia Travel Blog</b></a>
             <li><a href="account.html">Account</a></li>
             <li><a href="explore.html" class="active">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
@@ -26,12 +25,150 @@
         </header>
     </div>
 
+    <div class="search-section">
+        <div class="search-box">
+            <input type="text" id="userInput" placeholder="Search beach, food, or souvenirs...">
+            <button onclick="searchFunction()">Search</button>
+        </div>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+            <button class="filter-btn" onclick="filterCategory('food')">Foods</button>
+            <button class="filter-btn" onclick="filterCategory('souvenir')">Souvenirs</button>
+            <button class="filter-btn" onclick="filterCategory('beach')">Beaches</button>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <h2 class="section-title" id="displayTitle">Handpicked Recommendations</h2>
+        
+        <div class="explore-grid" id="cardGrid">
+            
+            <div class="explore-card">
+                <div class="card-image" style="background-image: url('images/laksa.png');"> 
+                    <span class="category-tag">Food</span>
+                </div>
+                <div class="card-text">
+                    <h3>Asam Laksa Penang</h3>
+                    <p>Tangy and spicy fish noodle soup from Air Itam. A legendary food experience in Pulau Pinang.</p>
+                    <a href="details-laksa.html" class="read-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="explore-card">
+                <div class="card-image" style="background-image: url('images/LorMee.png');"> <span class="category-tag">Food</span></div>
+                <div class="card-text">
+                    <h3>Wufoo Hokkien Mee Lor Mee</h3>
+                    <p>Authentic Hokkien Mee and Lor Mee from George Town. A must-try savory delight for noodle lovers.</p>
+                    <a href="details-wufoo.html" class="read-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="explore-card">
+                <div class="card-image" style="background-image: url('images/keropok.png');"> <span class="category-tag">Food</span></div>
+                <div class="card-text">
+                    <h3>Keropok Lekor Losong</h3>
+                    <p>Authentic fish crackers from Kampung Losong. Savory, chewy, and best served hot with traditional sweet chili sauce.</p>
+                    <a href="details-keropok.html" class="read-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="explore-card">
+                <div class="card-image" style="background-image: url('images/WinKraf.png');"> <span class="category-tag">Souvenir</span></div>
+                <div class="card-text">
+                    <h3>Labu Sayong Perak</h3>
+                    <p>Traditional clay water pitchers from Kuala Kangsar. Iconic Malaysian craft for home decor.</p>
+                    <a href="details-labu.html" class="read-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="explore-card">
+                <div class="card-image" style="background-image: url('images/TelukBelanga2.png');"> <span class="category-tag">Beach</span></div>
+                <div class="card-text">
+                    <h3>Teluk Belanga, Pangkor</h3>
+                    <p>An underrated emerald-green beach in Perak. Peaceful and perfect for a quiet getaway.</p>
+                    <a href="details-pangkor.html" class="read-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="explore-card">
+                <div class="card-image" style="background-image: url('images/tanjungRhu.png');"> <span class="category-tag">Beach</span></div>
+                <div class="card-text">
+                    <h3>Tanjung Rhu, Langkawi</h3>
+                    <p>Crystal clear waters and white sand. A hidden paradise away from the crowded Cenang beach.</p>
+                    <a href="details-tanjungrhu.html" class="read-more">Learn More →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="video-container">
+                <iframe id="reviewVideo" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         <footer>
             <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
+            <p>&copy; 2025 CSF3133 | Web-based Interface Design</p>
         </footer>
     </div>
-</body>
 
+    <script>
+        function searchFunction() {
+            let input = document.getElementById('userInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('explore-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                let description = cards[i].getElementsByTagName('p')[0].innerText.toLowerCase();
+                let category = cards[i].getElementsByClassName('category-tag')[0].innerText.toLowerCase();
+                
+                if (title.includes(input) || description.includes(input) || category.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        function filterCategory(category) {
+            let cards = document.getElementsByClassName('explore-card');
+            let buttons = document.getElementsByClassName('filter-btn');
+
+            for (let btn of buttons) {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase() === category || (category === 'all' && btn.innerText === 'All')) {
+                    btn.classList.add('active');
+                }
+            }
+
+            for (let i = 0; i < cards.length; i++) {
+                let cardCategory = cards[i].getElementsByClassName('category-tag')[0].innerText.toLowerCase();
+                if (category === 'all' || cardCategory === category) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        document.getElementById("userInput").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                searchFunction();
+            }
+        });
+
+        function closeModal() {
+            document.getElementById("videoModal").style.display = "none";
+            document.getElementById("reviewVideo").src = "";
+        }
+    </script>
+
+</body>
 </html>

@@ -5,31 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eastern Region - Explore Malaysia Travel Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
-            <li><a href="account.html">Account</a></li>
+            <li class="brand">Explore Malaysia Travel Blog</li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
-            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </li>
         </ul>
     </div>
 
     <div class="header">
         <header>
             <h1>Eastern Region</h1>
-            <p>Famously known as Pantai Timur.</p>
+            <p>Kelantan | Terengganu | Pahang</p>
         </header>
     </div>
 
-    <div class="footer">
-        <footer>
+    <div class="hero-container position-relative">
+        <img src="images/wau.JPG" alt="Wau Bulan - Symbol of Eastern Region" class="w-100 hero-img">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+        <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white w-75">
+            <h1 class="display-1 fw-semibold animate__animated animate__fadeInDownBig">
+                Experience the Heritage of the East
+            </h1>
+            <div class="fs-4 animate__animated animate__fadeInUpBig mt-3">
+                The Eastern Region of Peninsular Malaysia consists of Kelantan, Terengganu, and Pahang. 
+                Renowned for its crystal-clear islands, traditional crafts, and 
+                authentic Malay culture, it is the soul of the nation.
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+
+        <div class="text-center mb-4">
+            <button type="button" class="btn btn-primary mx-1 filter-btn" data-category="all">All Places</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="kelantan">Kelantan</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="terengganu">Terengganu</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="pahang">Pahang</button>
+        </div>
+
+        <div class="recommended-places mb-3">
+            <h2>Recommended Places</h2>
+        </div>
+
+        <div class="row g-3 py-3 px-5">
+            <div class="des-eff col-md-4" data-category="terengganu">
+                <div class="destination-card border rounded overflow-hidden">
+                    <img src="images/perhentian.jpg" alt="Perhentian Island" class="img-fluid w-100">
+                    <div class="destination-text p-2 text-center">Perhentian Island</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="pahang">
+                <div class="destination-card border rounded overflow-hidden">
+                    <img src="images/cameron.jpg" alt="Cameron Highlands" class="img-fluid w-100">
+                    <div class="destination-text p-2 text-center">Cameron Highlands</div>
+                </div>
+            </div>
+            
+            <div class="des-eff col-md-4" data-category="kelantan">
+                <div class="destination-card border rounded overflow-hidden">
+                    <img src="images/market.jpg" alt="Siti Khadijah Market" class="img-fluid w-100">
+                    <div class="destination-text p-2 text-center">Siti Khadijah Market</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="pahang">
+                <div class="destination-card border rounded overflow-hidden">
+                    <img src="images/taman_negara.jpg" alt="Taman Negara" class="img-fluid w-100">
+                    <div class="destination-text p-2 text-center">Taman Negara</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="terengganu">
+                <div class="destination-card border rounded overflow-hidden">
+                    <img src="images/redang.jpg" alt="Redang Island" class="img-fluid w-100">
+                    <div class="destination-text p-2 text-center">Redang Island</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="kelantan">
+                <div class="destination-card border rounded overflow-hidden">
+                    <img src="images/pulausuri.jpg" alt="Pulau Suri" class="img-fluid w-100">
+                    <div class="destination-text p-2 text-center">Pulau Suri</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="filter.js"></script>
+
+    <div class="footer bg-light py-4 mt-5">
+        <footer class="text-center">
             <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
+            <p>&copy; 2025 CSF3133 | Web-based Interface Design</p>
         </footer>
     </div>
 </body>

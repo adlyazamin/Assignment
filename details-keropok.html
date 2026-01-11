@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - Keropok Lekor Losong</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .status.green { color: #008a05; font-weight: bold; }
+        .sub-text { color: #666; font-weight: normal; margin-left: 5px; font-size: 0.9em; }
+        
+        * {
+            color: black;
+        }
+
+        .nav b {
+            color: white;
+        }
+
+        .location-link-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 15px 0;
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px solid #eee;
+        }
+        .location-address {
+            display: flex;
+            align-items: flex-start;
+        }
+        .address-text {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .price-section {
+            margin-top: 15px;
+        }
+        .price-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .price-label { width: 80px; }
+        .price-bar-bg {
+            flex-grow: 1;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin: 0 10px;
+        }
+        .price-bar-fill {
+            height: 100%;
+            background: #ffb400;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <ul>
+            <a class="logo" href="index.html"><b>Explore Malaysia Travel Blog</b></a>
+            <li><a href="account.html">Account</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </div>
+
+    <div class="details-main-container">
+        <header class="item-header">
+            <h1>Keropok Lekor Losong</h1>
+            <nav class="item-tabs">
+                <a href="#overview" class="active">Overview</a>
+                <a href="#about">About</a>
+                <a href="#location">Location</a>
+                <a href="#reviews">Reviews</a>
+            </nav>
+        </header>
+
+        <div class="hero-gallery">
+            <img src="images/keropok.png" alt="Keropok Lekor Losong Terengganu" style="width: 100%; border-radius: 12px; max-height: 450px; object-fit: cover;">
+        </div>
+
+        <div class="content-layout">
+            <div class="left-column">
+                <section id="overview">
+                    <h2>At a glance</h2>
+                    <p class="status green">Very Tasty <span class="sub-text">· Famous from Terengganu</span></p>
+                    <p class="address">📍 100-114, Jalan Kuala Hiliran, Kampung Losong Haji Su, 21000 Kuala Terengganu, Terengganu</p>
+                    <div class="action-links" style="margin-top: 10px;">
+                        <span>💰 Cash Only</span> | 
+                        <span>⭐ 4.5/5 Rating</span>
+                    </div>
+                </section>
+
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+                <section id="about">
+                    <h2>About</h2>
+                    <p style="font-style: italic; color: #444;">"Sangat bagus dan bersih juga sedap. Experience the most authentic Keropok Lekor in Terengganu, made fresh daily with high fish content."</p>
+                    <div style="margin-top: 15px;">
+                        <p>✓ Traditional Wood-Fired Preparation</p>
+                        <p>✓ Vacuum-Packed for Travelers</p>
+                        <p>✓ Famous Local Chili Sauce</p>
+                    </div>
+                </section>
+
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+<section id="location">
+    <h2>Location</h2>
+    <div class="map-box" style="margin-top: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.390558667503!2d103.11666687498428!3d5.319080594659422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b7c02058334407%3A0xc31913197a14e9f9!2sKeropok%20Warisan%20Losong!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
+            width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <a href="https://maps.app.goo.gl/h6Jq6hCjVqP3jR8T6" target="_blank" class="location-link-container">
+        <div class="location-address">
+            <span style="margin-right: 12px; font-size: 18px;">📍</span>
+            <p class="address-text">
+                <strong>Keropok Warisan Losong</strong><br>
+                Jalan Kuala Hiliran, Kampung Losong Haji Su,<br>
+                21000 Kuala Terengganu, Terengganu
+            </p>
+        </div>
+        <span style="font-size: 22px; color: #333; font-weight: bold;">›</span>
+    </a>
+</section>
+
+                    <a href="#" class="location-link-container">
+                        <div class="location-address">
+                            <span style="margin-right: 12px; font-size: 18px;">📍</span>
+                            <p class="address-text">Kampung Losong Haji Su, Jalan Kuala Hiliran,<br>21000 Kuala Terengganu, Terengganu</p>
+                        </div>
+                        <span style="font-size: 22px; color: #333; font-weight: bold;">›</span>
+                    </a>
+                </section>
+            </div>
+
+            <div class="right-sidebar">
+                <div class="side-card save-box" style="border: 1px solid #eee; padding: 20px; border-radius: 12px; margin-bottom: 20px; text-align: center;">
+                    <h3>Planning a trip?</h3>
+                    <button style="width: 100%; padding: 10px; border: 1.5px solid #333; background: #fff; border-radius: 25px; cursor: pointer; font-weight: bold;">
+                        ♡ Save to Wishlist
+                    </button>
+                </div>
+
+                <div class="side-card price-box" style="border: 1px solid #eee; padding: 20px; border-radius: 12px;">
+                    <h3>Price per person</h3>
+                    <div class="price-section">
+                        <div class="price-row">
+                            <span class="price-label">RM 1–20</span>
+                            <div class="price-bar-bg"><div class="price-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">RM 20–40</span>
+                            <div class="price-bar-bg"><div class="price-bar-fill" style="width: 30%;"></div></div>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">RM 40–60</span>
+                            <div class="price-bar-bg"><div class="price-bar-fill" style="width: 10%;"></div></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 11px; color: #777; margin-top: 10px;">*Reported by 11 people. Service options: Cash only.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" style="text-align: center; padding: 40px 0; background: #f9f9f9; margin-top: 50px;">
+        <footer>
+            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
+            <p>© 2025 CSF3133 | Web-based Interface Design</p>
+        </footer>
+    </div>
+
+</body>
+</html>
