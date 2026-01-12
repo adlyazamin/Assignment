@@ -5,38 +5,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Explore Malaysia Travel Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* --- NAVIGATION OVERRIDE --- */
+        /* Fixes Bootstrap conflict since Bootstrap also uses the class .nav */
+        div.nav {
+            display: block; /* Overrides Bootstrap's flex display for .nav */
+        }
+        
+        /* --- CUSTOM STYLES FOR INTERACTIVE REGION GRID --- */
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Added an extra row for the new Borneo region */
+            grid-template-rows: auto auto auto auto; 
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Region Box Styling */
+        .region-box {
+            position: relative;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Hover Effects */
+        .region-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        /* Dark Overlay for text readability */
+        .region-box::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            transition: background 0.3s;
+            z-index: 1;
+        }
+
+        .region-box:hover::before {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Text Styling */
+        .region-title {
+            position: relative;
+            z-index: 2;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* --- GEOGRAPHIC LAYOUT (GRID AREAS) --- */
+
+        /* NORTHERN REGION (Top, Full Width) */
+        .region-north {
+            grid-column: 1 / span 2;
+            background-image: url('images/penangbridge.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* CENTRAL REGION (Middle Left) */
+        .region-central {
+            grid-column: 1 / span 2;
+            background-image: url('images/klcc.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* EASTERN REGION (Middle Right) */
+        .region-east {
+            grid-column: 1 / span 2;
+            /* Removed row span to make room for Borneo/South balance */
+            background-image: url('images/perhentian.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* SOUTHERN REGION (Bottom Left) */
+        .region-south {
+            grid-column: 1 / span 2;
+            background-image: url('images/afamosa.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* BORNEO REGION (Bottom Right) - NEW ADDITION */
+        .region-borneo {
+            grid-column: 1 / span 2;
+            background-image: url('images/borneo1.jpg'); /* Ensure you have this image */
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
 </head>
 
 <body>
+
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
-            <li><a href="account.html">Account</a></li>
+            <li class="brand">Explore Malaysia Travel Blog</li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
-            <li><a href="index.html" class="active">Home</a></li>
+
+            <li><a href="login.html">Login</a></li>
+
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                </a>
+            </li>
         </ul>
     </div>
 
-    <div class="header">
-        <header>
-            <h1>Home</h1>
-            <p>Explore Malaysia</p>
-        </header>
+    <div class="hero-container position-relative">
+        <img src="images/titiwangsa.jpg" alt="Malaysia Scenery" class="w-100 hero-img"
+            style="height: 90vh; object-fit: cover;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+        <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white w-75">
+            <h1 class="display-1 fw-bold animate__animated animate__fadeInDown">Welcome to Malaysia</h1>
+            <p class="fs-4 mt-3">Truly Asia. A land of diverse cultures, ancient rainforests, and modern cities.</p>
+            <a href="#overview" class="btn btn-primary btn-lg mt-4 rounded-pill px-5">Start Exploring</a>
+        </div>
     </div>
 
-    <section id="map" class="container">
-        <div class="container-fluid">
-            <h2>Malaysian Map</h1>
-                <h4>Regions in Malaysia</h4>
+    <div id="overview" class="container my-5 py-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="mb-4 text-primary fw-bold">About Our Blog</h2>
+                <p class="lead text-muted">
+                    Welcome to the <strong>Explore Malaysia Travel Blog</strong>, your ultimate guide to discovering the
+                    hidden gems of this beautiful nation.
+                </p>
+                <p class="text-secondary">
+                    Whether you are a foodie hunting for the best Nasi Lemak, an adventurer seeking the oldest
+                    rainforests,
+                    or a history buff exploring colonial heritage, we have curated the best spots for you.
+                </p>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <div class="container my-5">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Map of Malaysia</h2>
+            <p class="text-muted">A look at the states and regions of Malaysia</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="border rounded p-2 shadow-sm bg-white">
+                    <img src="images/malaysiamap.jpg" alt="Map of Malaysia" class="img-fluid w-100 rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5 pb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Explore by Region</h2>
+            <p class="text-muted">Click on a region to find specific attractions</p>
+        </div>
+
+        <div class="map-container">
+
+            <a href="north.html" class="region-box region-north">
+                <span class="region-title">Northern Region</span>
+            </a>
+
+            <a href="central.html" class="region-box region-central">
+                <span class="region-title">Central Region</span>
+            </a>
+
+            <a href="eastern.html" class="region-box region-east">
+                <span class="region-title">Eastern Region</span>
+            </a>
+
+            <a href="south.html" class="region-box region-south">
+                <span class="region-title">Southern Region</span>
+            </a>
+
+            <a href="borneo.html" class="region-box region-borneo">
+                <span class="region-title">Borneo Region</span>
+            </a>
+
+        </div>
+    </div>
 
     <div class="footer">
         <footer>
-            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
+            <p>Travel Inquiries: <a href="mailto:s76094@ocean.umt.edu.my" style="color: white;">s76094@ocean.umt.edu.my</a></p>
+            <p>&copy; 2025 Explore Malaysia Travel Blog | Designed for CSF3133</p>
         </footer>
     </div>
 </body>

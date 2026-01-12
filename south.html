@@ -5,33 +5,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Southern Region - Explore Malaysia Travel Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* --- CLEANER STYLE FOR CATEGORY TAGS --- */
+        .category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(33, 37, 41, 0.85); 
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem; 
+            font-weight: 600;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            
+            /* Ensures background wraps tightly to the text length */
+            width: fit-content; 
+        }
+
+        /* --- IMAGE FITTING --- */
+        .destination-card img {
+            height: 250px;       /* Sets a uniform height for all cards */
+            object-fit: cover;   /* Ensures image fills the area without stretching/distortion */
+            width: 100%;         /* Ensures full width */
+            display: block;      /* Removes potential inline spacing gaps */
+        }
+    </style>
 </head>
 
 <body>
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
-            <li><a href="account.html">Account</a></li>
+            <li class="brand">Explore Malaysia Travel Blog</li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
-            <li><a href="index.html">Home</a></li>
+            
+            <li><a href="login.html">Login</a></li>
+
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                </a>
+            </li>
         </ul>
     </div>
 
     <div class="header">
         <header>
             <h1>Southern Region</h1>
-            <p>JB STYLE</p>
+            <p>Melaka | Negeri Sembilan | Johor</p>
         </header>
     </div>
 
-    <div class="footer">
-        <footer>
-            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
-        </footer>
+    <div class="hero-container position-relative">
+        <img src="images/melakariver.jpg" alt="Southern Region View" class="w-100 hero-img">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+        <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white w-75">
+            <h1 class="display-1 fw-semibold animate__animated animate__fadeInDownBig">
+                Gateway to History & Culture
+            </h1>
+            <div class="fs-4 animate__animated animate__fadeInUpBig mt-3">
+                The Southern Region is a journey through time. 
+                Explore the UNESCO World Heritage sites of Melaka, the unique Minangkabau culture of Negeri Sembilan, 
+                and the exciting theme parks and coastal beauty of Johor.
+            </div>
+        </div>
     </div>
+
+    <div class="container my-5">
+
+        <div class="text-center mb-4">
+            <button type="button" class="btn btn-primary mx-1 filter-btn" data-category="all">All Places</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="melaka">Melaka</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="negeri">Negeri Sembilan</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="johor">Johor</button>
+        </div>
+
+        <div class="recommended-places mb-3">
+            <h2>Recommended Places</h2>
+        </div>
+
+        <div class="row g-3 py-3 px-5">
+            
+            <div class="des-eff col-md-4" data-category="melaka">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/afamosa.jpg" alt="A Famosa Fortress">
+                        <span class="category-tag">Melaka</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">A Famosa Fortress</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="johor">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/legoland.jpg" alt="Legoland Malaysia">
+                        <span class="category-tag">Johor</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Legoland Malaysia</div>
+                </div>
+            </div>
+            
+            <div class="des-eff col-md-4" data-category="negeri">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/portdickson.jpg" alt="Port Dickson">
+                        <span class="category-tag">Negeri Sembilan</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Port Dickson Beach</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="melaka">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/jonkerstreet.jpg" alt="Jonker Walk">
+                        <span class="category-tag">Melaka</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Jonker Street Night Market</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="johor">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/desaru.jpg" alt="Desaru Coast">
+                        <span class="category-tag">Johor</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Desaru Coast</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="negeri">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/istanaserimenanti.jpg" alt="Istana Seri Menanti">
+                        <span class="category-tag">Negeri Sembilan</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Istana Seri Menanti</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="filter.js"></script>
+
+    <div class="footer">
+            <footer>
+                <p>Travel Inquiries: <a href="mailto:s76094@ocean.umt.edu.my"
+                        style="color: white;">s76094@ocean.umt.edu.my</a></p>
+                <p>&copy; 2025 Explore Malaysia Travel Blog | Designed for CSF3133</p>
+            </footer>
+        </div>
 </body>
 
 </html>

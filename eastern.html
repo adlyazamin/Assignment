@@ -8,6 +8,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* --- CLEANER STYLE FOR CATEGORY TAGS --- */
+        .category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(33, 37, 41, 0.85); 
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem; 
+            font-weight: 600;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            
+            /* Ensures background wraps tightly to the text length */
+            width: fit-content; 
+        }
+
+        /* --- IMAGE FITTING --- */
+        .destination-card img {
+            height: 250px;       /* Sets a uniform height for all cards */
+            object-fit: cover;   /* Ensures image fills the area without stretching/distortion */
+            width: 100%;         /* Ensures full width */
+            display: block;      /* Removes potential inline spacing gaps */
+        }
+    </style>
 </head>
 
 <body>
@@ -17,9 +47,12 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
+            
+            <li><a href="login.html">Login</a></li>
+
             <li>
                 <a href="account.html" class="icon-link" title="Account">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user" style="color: white;"></i>
                 </a>
             </li>
         </ul>
@@ -63,44 +96,63 @@
         </div>
 
         <div class="row g-3 py-3 px-5">
+            
             <div class="des-eff col-md-4" data-category="terengganu">
                 <div class="destination-card border rounded overflow-hidden">
-                    <img src="images/perhentian.jpg" alt="Perhentian Island" class="img-fluid w-100">
+                    <div class="position-relative">
+                        <img src="images/perhentian.jpg" alt="Perhentian Island">
+                        <span class="category-tag">Terengganu</span>
+                    </div>
                     <div class="destination-text p-2 text-center">Perhentian Island</div>
                 </div>
             </div>
 
             <div class="des-eff col-md-4" data-category="pahang">
                 <div class="destination-card border rounded overflow-hidden">
-                    <img src="images/cameron.jpg" alt="Cameron Highlands" class="img-fluid w-100">
+                    <div class="position-relative">
+                        <img src="images/cameron.jpg" alt="Cameron Highlands">
+                        <span class="category-tag">Pahang</span>
+                    </div>
                     <div class="destination-text p-2 text-center">Cameron Highlands</div>
                 </div>
             </div>
             
             <div class="des-eff col-md-4" data-category="kelantan">
                 <div class="destination-card border rounded overflow-hidden">
-                    <img src="images/market.jpg" alt="Siti Khadijah Market" class="img-fluid w-100">
+                    <div class="position-relative">
+                        <img src="images/market.jpg" alt="Siti Khadijah Market">
+                        <span class="category-tag">Kelantan</span>
+                    </div>
                     <div class="destination-text p-2 text-center">Siti Khadijah Market</div>
                 </div>
             </div>
 
             <div class="des-eff col-md-4" data-category="pahang">
                 <div class="destination-card border rounded overflow-hidden">
-                    <img src="images/taman_negara.jpg" alt="Taman Negara" class="img-fluid w-100">
+                    <div class="position-relative">
+                        <img src="images/taman_negara.jpg" alt="Taman Negara">
+                        <span class="category-tag">Pahang</span>
+                    </div>
                     <div class="destination-text p-2 text-center">Taman Negara</div>
                 </div>
             </div>
 
             <div class="des-eff col-md-4" data-category="terengganu">
                 <div class="destination-card border rounded overflow-hidden">
-                    <img src="images/redang.jpg" alt="Redang Island" class="img-fluid w-100">
+                    <div class="position-relative">
+                        <img src="images/redang.jpg" alt="Redang Island">
+                        <span class="category-tag">Terengganu</span>
+                    </div>
                     <div class="destination-text p-2 text-center">Redang Island</div>
                 </div>
             </div>
 
             <div class="des-eff col-md-4" data-category="kelantan">
                 <div class="destination-card border rounded overflow-hidden">
-                    <img src="images/pulausuri.jpg" alt="Pulau Suri" class="img-fluid w-100">
+                    <div class="position-relative">
+                        <img src="images/pulausuri.jpg" alt="Pulau Suri">
+                        <span class="category-tag">Kelantan</span>
+                    </div>
                     <div class="destination-text p-2 text-center">Pulau Suri</div>
                 </div>
             </div>
@@ -109,10 +161,10 @@
 
     <script src="filter.js"></script>
 
-    <div class="footer bg-light py-4 mt-5">
-        <footer class="text-center">
-            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy; 2025 CSF3133 | Web-based Interface Design</p>
+    <div class="footer">
+        <footer>
+            <p>Travel Inquiries: <a href="mailto:s76094@ocean.umt.edu.my" style="color: white;">s76094@ocean.umt.edu.my</a></p>
+            <p>&copy; 2025 Explore Malaysia Travel Blog | Designed for CSF3133</p>
         </footer>
     </div>
 </body>

@@ -8,25 +8,56 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* --- CLEANER STYLE FOR CATEGORY TAGS --- */
+        .category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(33, 37, 41, 0.85); 
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem; 
+            font-weight: 600;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            
+            /* Ensures background wraps tightly to the text length */
+            width: fit-content; 
+        }
+
+        /* --- IMAGE FITTING --- */
+        .destination-card img {
+            height: 250px;       /* Sets a uniform height for all cards */
+            object-fit: cover;   /* Ensures image fills the area without stretching/distortion */
+            width: 100%;         /* Ensures full width */
+            display: block;      /* Removes potential inline spacing gaps */
+        }
+    </style>
 </head>
 
 <body>
-<!--Navigation Bar-->
     <div class="nav">
-    <ul>
-        <li class="brand">Explore Malaysia Travel Blog</li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="explore.html">Explore</a></li>
-        <li><a href="destination.html">Destinations</a></li>
-        <li>
-            <a href="account.html" class="icon-link" title="Account">
-                <i class="fa-solid fa-user"></i>
-            </a>
-        </li>
-    </ul>
+        <ul>
+            <li class="brand">Explore Malaysia Travel Blog</li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="destination.html">Destinations</a></li>
+            
+            <li><a href="login.html">Login</a></li>
+
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                </a>
+            </li>
+        </ul>
     </div>
 
-<!--Header-->
     <div class="header">
         <header>
             <h1>Borneo Region</h1>
@@ -34,104 +65,108 @@
         </header>
     </div>
 
-<!-- Hero Section: Single Image with Text Overlay -->
-<div class="hero-container position-relative">
-    <!-- Background Image -->
-    <img src="images/borneo1.jpg" alt="hero image" class="w-100 hero-img">
+    <div class="hero-container position-relative">
+        <img src="images/borneo1.jpg" alt="Borneo Scenery" class="w-100 hero-img">
 
-    <!-- Dark Overlay for readability -->
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
-    <!-- Text Overlay -->
-    <div class="hero-text position-absolute top-50 start-50 translate-middle text-center">
-        <h1 class="display-1 fw-semibold animate__animated animate__fadeInDownBig">
-            Explore the best destinations in Borneo
-        </h1>
-        <p class="fs-2 animate__animated animate__fadeInUpBig">
-            <h4>Borneo is the third largest island in the world, shared by Labuan, Sabah, and Sarawak. 
-            Rich in rainforests, unique wildlife, and <br>diverse cultures, it is a paradise for adventurers and nature lovers. <h4>
-        </p>
-    </div>
-</div>
-
-
-<!-- destination list in Borneo-->
-<div class="container my-5">
-
-    <!-- Button Tabs above Recommended Places -->
-    <div class="text-center mb-3">
-        <button type="button" class="btn btn-primary mx-1 filter-btn" data-category="all">All Places</button>
-        <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="sabah">Sabah</button>
-        <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="sarawak">Sarawak</button>
-        <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="labuan">Labuan</button>
-    </div>
-
-    <!-- Recommended Places (LEFT aligned) -->
-    <div class="recommended-places mb-3">
-        <h2>Recommended Places</h2>
-    </div>
-
-    <div class="row g-3 py-3 px-5">
-        <!-- Kundasang -->
-        <div class="des-eff col-md-4" data-category="sabah">
-            <div class="destination-card">
-                <img src="images/kundasang.jpg" alt="Kundasang">
-                <div class="destination-text">Kundasang</div>
-            </div>
-        </div>
-
-        <!--Clock Tower-->
-        <div class="des-eff col-md-4" data-category="labuan">
-            <div class="destination-card">
-                <img src="images/labuan.jpg" alt="Clock Tower">
-                <div class="destination-text">Clock Tower</div>
-            </div>
-        </div>
-        
-        
-        <!--Marine Museum-->
-        <div class="des-eff col-md-4" data-category="labuan">
-          <div class="destination-card">
-              <img src="images/museum.jpg" alt="Marine Museum">
-              <div class="destination-text">Marine Museum</div>
-          </div>
-        </div>
-
-        <!-- Miri -->
-        <div class="des-eff col-md-4" data-category="sarawak">
-            <div class="destination-card">
-                <img src="images/miri.jpg" alt="Miri">
-                <div class="destination-text">Miri</div>
-            </div>
-        </div>
-
-        <!-- Semporna -->
-        <div class="des-eff col-md-4" data-category="sabah">
-            <div class="destination-card">
-                <img src="images/semporna.jpg" alt="Semporna">
-                <div class="destination-text">Semporna</div>
-            </div>
-        </div>
-
-        <!-- Kuching -->
-        <div class="des-eff col-md-4" data-category="sarawak">
-            <div class="destination-card">
-                <img src="images/kuching.jpg" alt="Kuching">
-                <div class="destination-text">Kuching</div>
+        <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white w-75">
+            <h1 class="display-1 fw-semibold animate__animated animate__fadeInDownBig">
+                Explore the best destinations in Borneo
+            </h1>
+            <div class="fs-4 animate__animated animate__fadeInUpBig mt-3">
+                Borneo is the third largest island in the world, shared by Labuan, Sabah, and Sarawak. 
+                Rich in rainforests, unique wildlife, and diverse cultures, it is a paradise for adventurers and nature lovers.
             </div>
         </div>
     </div>
-</div>
 
 
-<!-- Link to external JS -->
-<script src="filter.js"></script>
+    <div class="container my-5">
 
-<!--Footer-->
+        <div class="text-center mb-3">
+            <button type="button" class="btn btn-primary mx-1 filter-btn" data-category="all">All Places</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="sabah">Sabah</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="sarawak">Sarawak</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="labuan">Labuan</button>
+        </div>
+
+        <div class="recommended-places mb-3">
+            <h2>Recommended Places</h2>
+        </div>
+
+        <div class="row g-3 py-3 px-5">
+            
+            <div class="des-eff col-md-4" data-category="sabah">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/kundasang.jpg" alt="Kundasang">
+                        <span class="category-tag">Sabah</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Kundasang</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="labuan">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/labuan.jpg" alt="Clock Tower">
+                        <span class="category-tag">Labuan</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Clock Tower</div>
+                </div>
+            </div>
+            
+            <div class="des-eff col-md-4" data-category="labuan">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/museum.jpg" alt="Marine Museum">
+                        <span class="category-tag">Labuan</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Marine Museum</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="sarawak">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/miri.jpg" alt="Miri">
+                        <span class="category-tag">Sarawak</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Miri</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="sabah">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/semporna.jpg" alt="Semporna">
+                        <span class="category-tag">Sabah</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Semporna</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="sarawak">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/kuching.jpg" alt="Kuching">
+                        <span class="category-tag">Sarawak</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Kuching</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="filter.js"></script>
+
     <div class="footer">
         <footer>
-            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
+            <p>Travel Inquiries: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
+            <p>&copy; 2025 Explore Malaysia Travel Blog | Designed for CSF3133</p>
         </footer>
     </div>
 </body>

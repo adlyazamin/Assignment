@@ -5,33 +5,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Northern Region - Explore Malaysia Travel Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* --- CLEANER STYLE FOR CATEGORY TAGS --- */
+        .category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(33, 37, 41, 0.85); 
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem; 
+            font-weight: 600;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            
+            /* Ensures background wraps tightly to the text length */
+            width: fit-content; 
+        }
+
+        /* --- IMAGE FITTING --- */
+        .destination-card img {
+            height: 250px;       /* Sets a uniform height for all cards */
+            object-fit: cover;   /* Ensures image fills the area without stretching/distortion */
+            width: 100%;         /* Ensures full width */
+            display: block;      /* Removes potential inline spacing gaps */
+        }
+    </style>
 </head>
 
 <body>
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
-            <li><a href="account.html">Account</a></li>
+            <li class="brand">Explore Malaysia Travel Blog</li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
-            <li><a href="index.html">Home</a></li>
+            
+            <li><a href="login.html">Login</a></li>
+
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                </a>
+            </li>
         </ul>
     </div>
-
     <div class="header">
         <header>
             <h1>Northern Region</h1>
-            <p>NASI KANDAQ</p>
+            <p>Perlis | Kedah | Penang | Perak</p>
         </header>
     </div>
 
-    <div class="footer">
-        <footer>
-            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
-        </footer>
+    <div class="hero-container position-relative">
+        <img src="images/penangbridge.jpg" alt="Northern Region Scenery" class="w-100 hero-img">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+        <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white w-75">
+            <h1 class="display-1 fw-semibold animate__animated animate__fadeInDownBig">
+                Discover the Northern Gems
+            </h1>
+            <div class="fs-4 animate__animated animate__fadeInUpBig mt-3">
+                The Northern Region is a vibrant mix of history, nature, and food. 
+                From the heritage streets of George Town to the ancient rainforests of Perak 
+                and the legendary islands of Langkawi.
+            </div>
+        </div>
     </div>
+
+    <div class="container my-5">
+
+        <div class="text-center mb-4">
+            <button type="button" class="btn btn-primary mx-1 filter-btn" data-category="all">All Places</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="penang">Penang</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="perak">Perak</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="kedah">Kedah</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="perlis">Perlis</button>
+        </div>
+
+        <div class="recommended-places mb-3">
+            <h2>Recommended Places</h2>
+        </div>
+
+        <div class="row g-3 py-3 px-5">
+            
+            <div class="des-eff col-md-4" data-category="penang">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/penangstreetart.jpg" alt="Penang Street Art">
+                        <span class="category-tag">Penang</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Penang Street Art</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="perak">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/kelliescastle.jpg" alt="Kellie's Castle">
+                        <span class="category-tag">Perak</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Kellie's Castle</div>
+                </div>
+            </div>
+            
+            <div class="des-eff col-md-4" data-category="kedah">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/skybridge.jpg" alt="Langkawi Sky Bridge">
+                        <span class="category-tag">Kedah</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Langkawi Sky Bridge</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="perlis">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/guakelam.jpg" alt="Gua Kelam">
+                        <span class="category-tag">Perlis</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Gua Kelam</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="penang">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/penanghill.jpg" alt="Penang Hill">
+                        <span class="category-tag">Penang</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Penang Hill</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="perak">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/royalbelum.jpg" alt="Royal Belum Rainforest">
+                        <span class="category-tag">Perak</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Royal Belum Rainforest</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="filter.js"></script>
+
+    <div class="footer">
+            <footer>
+                <p>Travel Inquiries: <a href="mailto:s76094@ocean.umt.edu.my"
+                        style="color: white;">s76094@ocean.umt.edu.my</a></p>
+                <p>&copy; 2025 Explore Malaysia Travel Blog | Designed for CSF3133</p>
+            </footer>
+        </div>
 </body>
 
 </html>

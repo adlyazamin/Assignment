@@ -1,29 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Explore Malaysia Travel Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* --- 1. UNSCROLLABLE SETUP --- */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            /* This kills the scrollbar */
+        }
+
+        .login-page-wrapper {
+            /* Background Image */
+            background-image: url('images/titiwangsa2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* Forces full viewport height */
+            height: 100vh;
+            width: 100vw;
+
+            /* Flexbox to CENTER the container perfectly */
+            display: flex;
+            align-items: center;
+            /* Vertical Center */
+            justify-content: center;
+            /* Horizontal Center */
+            position: relative;
+        }
+
+        /* Dark Overlay */
+        .login-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        /* --- 2. DARK TRANSPARENT CONTAINER --- */
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 15px;
+            padding: 40px;
+            width: 90%;
+            /* Responsive width */
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+
+            /* Ensure it sits above overlay */
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- 3. POSITIONING FOOTER & NAV --- */
+        /* Absolute position removes them from flex flow, allowing perfect centering */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 20;
+            padding-bottom: 10px;
+        }
+
+        .nav {
+            position: absolute;
+            /* Keeps it at top without taking up flex space */
+            top: 0;
+            width: 100%;
+            z-index: 20;
+        }
+
+        /* --- FORM STYLING --- */
+        .login-header h2 {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .login-header p {
+            color: #ccc;
+        }
+
+        .form-label {
+            color: #eee;
+        }
+
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .form-control::placeholder {
+            color: #bbb;
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: #0d6efd;
+            box-shadow: none;
+            color: #fff;
+        }
+
+        .input-group-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .btn-login {
+            background-color: #0d6efd;
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .btn-login:hover {
+            background-color: #0b5ed7;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
-            <li><a href="account.html">Account</a></li>
+            <li class="brand">Explore Malaysia Travel Blog</li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
-            <li><a href="index.html">Home</a></li>
+
+            <li><a href="login.html">Login</a></li>
+
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                </a>
+            </li>
         </ul>
     </div>
+    <div class="login-page-wrapper">
 
-    <div class="footer">
-        <footer>
-            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
-        </footer>
+        <div class="login-overlay"></div>
+
+        <div class="login-container animate__animated animate__fadeInUp">
+
+            <div class="login-header text-center mb-4">
+                <h2>Welcome Back</h2>
+                <p>Login to continue exploring</p>
+            </div>
+
+            <form action="index.html">
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="remember"
+                            style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
+                        <label class="form-check-label text-white small" for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="text-info text-decoration-none small">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 btn-login">Login</button>
+
+                <div class="text-center mt-4">
+                    <p class="mb-0 text-white small">Don't have an account? <a href="register.html"
+                            class="text-info fw-bold text-decoration-none">Sign Up</a></p>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="footer">
+            <footer>
+                <p>Travel Inquiries: <a href="mailto:s76094@ocean.umt.edu.my"
+                        style="color: white;">s76094@ocean.umt.edu.my</a></p>
+                <p>&copy; 2025 Explore Malaysia Travel Blog | Designed for CSF3133</p>
+            </footer>
+        </div>
+
     </div>
+
 </body>
 
 </html>

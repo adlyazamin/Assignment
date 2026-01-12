@@ -5,31 +5,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central Region - Explore Malaysia Travel Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* --- CLEANER STYLE FOR CATEGORY TAGS --- */
+        .category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(33, 37, 41, 0.85); 
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem; 
+            font-weight: 600;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            
+            /* Ensures background wraps tightly to the text length */
+            width: fit-content; 
+        }
+
+        /* --- IMAGE FITTING --- */
+        .destination-card img {
+            height: 250px;       /* Sets a uniform height for all cards */
+            object-fit: cover;   /* Ensures image fills the area without stretching/distortion */
+            width: 100%;         /* Ensures full width */
+            display: block;      /* Removes potential inline spacing gaps */
+        }
+    </style>
 </head>
 
 <body>
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
-            <li><a href="account.html">Account</a></li>
+            <li class="brand">Explore Malaysia Travel Blog</li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="destination.html">Destinations</a></li>
-            <li><a href="index.html">Home</a></li>
+            
+            <li><a href="login.html">Login</a></li>
+
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                </a>
+            </li>
         </ul>
     </div>
 
     <div class="header">
         <header>
             <h1>Central Region</h1>
-            <p>KL.</p>
+            <p>Kuala Lumpur | Putrajaya | Selangor</p>
         </header>
     </div>
 
+    <div class="hero-container position-relative">
+        <img src="images/klskyline.jpg" alt="Kuala Lumpur Skyline" class="w-100 hero-img">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+        <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white w-75">
+            <h1 class="display-1 fw-semibold animate__animated animate__fadeInDownBig">
+                The Heart of Modern Malaysia
+            </h1>
+            <div class="fs-4 animate__animated animate__fadeInUpBig mt-3">
+                The Central Region is the pulse of the nation. 
+                Experience the dazzling skyscrapers of Kuala Lumpur, the administrative grandeur of Putrajaya, 
+                and the diverse natural and urban attractions of Selangor.
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+
+        <div class="text-center mb-4">
+            <button type="button" class="btn btn-primary mx-1 filter-btn" data-category="all">All Places</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="kl">Kuala Lumpur</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="putrajaya">Putrajaya</button>
+            <button type="button" class="btn btn-outline-primary mx-1 filter-btn" data-category="selangor">Selangor</button>
+        </div>
+
+        <div class="recommended-places mb-3">
+            <h2>Recommended Places</h2>
+        </div>
+
+        <div class="row g-3 py-3 px-5">
+            
+            <div class="des-eff col-md-4" data-category="kl">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/klcc.jpg" alt="Petronas Twin Towers">
+                        <span class="category-tag">Kuala Lumpur</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Petronas Twin Towers (KLCC)</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="selangor">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/batucaves.jpg" alt="Batu Caves">
+                        <span class="category-tag">Selangor</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Batu Caves</div>
+                </div>
+            </div>
+            
+            <div class="des-eff col-md-4" data-category="putrajaya">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/putramosque.jpg" alt="Putra Mosque">
+                        <span class="category-tag">Putrajaya</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Putra Mosque</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="kl">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/dataranmerdeka.jpg" alt="Dataran Merdeka">
+                        <span class="category-tag">Kuala Lumpur</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Dataran Merdeka</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="selangor">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/skymirror.jpg" alt="Sky Mirror Sasaran">
+                        <span class="category-tag">Selangor</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Sky Mirror Sasaran</div>
+                </div>
+            </div>
+
+            <div class="des-eff col-md-4" data-category="putrajaya">
+                <div class="destination-card border rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="images/putrabotanical.jpg" alt="Putrajaya Botanical Garden">
+                        <span class="category-tag">Putrajaya</span>
+                    </div>
+                    <div class="destination-text p-2 text-center">Putrajaya Botanical Garden</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="filter.js"></script>
+
     <div class="footer">
         <footer>
-            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
+            <p>Travel Inquiries: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
+            <p>&copy; 2025 Explore Malaysia Travel Blog | Designed for CSF3133</p>
         </footer>
     </div>
 </body>

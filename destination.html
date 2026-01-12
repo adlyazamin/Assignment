@@ -5,49 +5,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinations - Explore Malaysia Travel Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* --- CUSTOM HERO SECTION --- */
+        .destinations-hero {
+            background-image: url('images/saloma.jpg'); /* Reusing your main hero image */
+            background-size: cover;
+            background-position: center;
+            height: 60vh; /* Takes up 60% of the screen height */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* --- REGION CARD STYLING --- */
+        .region-card {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 350px; /* Tall, impressive cards */
+            position: relative;
+            display: block;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .region-card:hover {
+            transform: translateY(-10px); /* Lifts up on hover */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .region-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .region-card:hover img {
+            transform: scale(1.1); /* Subtle zoom effect on image */
+        }
+
+        /* Text Overlay inside cards */
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 30px 20px;
+            color: white;
+        }
+
+        .region-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .region-desc {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin: 0;
+        }
+
+    </style>
 </head>
 
 <body>
     <div class="nav">
         <ul>
-            <a><b>Explore Malaysia Travel Blog</b></a>
-            <li><a href="account.html">Account</a></li>
-            <li><a href="explore.html">Explore</a></li>
-            <li><a href="destination.html" class="active">Destinations</a></li>
+            <li class="brand">Explore Malaysia Travel Blog</li>
             <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li>
+                <a href="account.html" class="icon-link" title="Account">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                </a>
+            </li>
         </ul>
     </div>
 
-    <div class="header">
-        <header>
-            <h1>Discover every single region in Malaysia.</h1>
-            <p>Get to know each region</p>
-        </header>
+    <div class="destinations-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1 class="display-3 fw-bold">Destinations</h1>
+            <p class="fs-4">Discover the unique diversity of every region in Malaysia.</p>
+        </div>
     </div>
 
-    <section id="map" class="container">
-        <div class="container-fluid">
-            <div class="regions">
-                <h2>Regions in Malaysia</h2>
-                <ol>
-                    <li><a href="north.html">Northern Region</a></li>
-                    <li><a href="central.html">Central Region</a></li>
-                    <li><a href="south.html">Southern Region</a></li>
-                    <li><a href="eastern.html">Eastern Region</a></li>
-                    <li><a href="borneo.html">Borneo Region</a></li>
-                </ol>
+    <div class="container mb-5">
+        
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md-4">
+                <a href="north.html" class="region-card">
+                    <img src="images/penangbridge.jpg" alt="Northern Region">
+                    <div class="card-overlay">
+                        <div class="region-name">Northern Region</div>
+                        <p class="region-desc">Perlis | Kedah | Penang | Perak</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="central.html" class="region-card">
+                    <img src="images/klcc.jpg" alt="Central Region">
+                    <div class="card-overlay">
+                        <div class="region-name">Central Region</div>
+                        <p class="region-desc">Kuala Lumpur | Selangor | Putrajaya</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="eastern.html" class="region-card">
+                    <img src="images/perhentian.jpg" alt="Eastern Region">
+                    <div class="card-overlay">
+                        <div class="region-name">Eastern Region</div>
+                        <p class="region-desc">Kelantan | Terengganu | Pahang</p>
+                    </div>
+                </a>
             </div>
         </div>
-    </section>
 
+        <div class="row g-4 justify-content-center mt-2">
+            
+            <div class="col-md-4">
+                <a href="south.html" class="region-card">
+                    <img src="images/afamosa.jpg" alt="Southern Region">
+                    <div class="card-overlay">
+                        <div class="region-name">Southern Region</div>
+                        <p class="region-desc">Melaka | Negeri Sembilan | Johor</p>
+                    </div>
+                </a>
+            </div>
 
-    <div class="footer">
+            <div class="col-md-4">
+                <a href="borneo.html" class="region-card">
+                    <img src="images/borneo1.jpg" alt="Borneo Region">
+                    <div class="card-overlay">
+                        <div class="region-name">Borneo Region</div>
+                        <p class="region-desc">Sabah | Sarawak | Labuan</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+        <div class="footer">
         <footer>
-            <p>Contact: <a href="mailto:s76094@ocean.umt.edu.my">s76094@ocean.umt.edu.my</a></p>
-            <p>&copy 2025 CSF3133 | Web-based Interface Design</p>
+            <p>Travel Inquiries: <a href="mailto:s76094@ocean.umt.edu.my" style="color: white;">s76094@ocean.umt.edu.my</a></p>
+            <p>&copy; 2025 Explore Malaysia Travel Blog | Designed for CSF3133</p>
         </footer>
     </div>
-</body>
 
+
+</body>
 </html>
